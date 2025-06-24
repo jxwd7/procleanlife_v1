@@ -1,17 +1,18 @@
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import React, { useState } from 'react';
 import {
-  Alert,
-  Dimensions,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View
+    Alert,
+    Dimensions,
+    SafeAreaView,
+    ScrollView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View
 } from 'react-native';
 
 const { width } = Dimensions.get('window');
@@ -315,14 +316,14 @@ export default function HomeScreen() {
                   subtitle="Get quotes from cleaners"
                   icon="add-circle"
                   color="#3b82f6"
-                  onPress={() => console.log('Post job')}
+                  onPress={() => router.push('/post-job')}
                 />
                 <QuickActionButton
                   title="My Jobs"
                   subtitle="View your active jobs"
                   icon="list"
                   color="#10b981"
-                  onPress={() => console.log('My jobs')}
+                  onPress={() => router.push('/my-jobs')}
                   badge={userData.activeJobs}
                 />
                 <QuickActionButton
